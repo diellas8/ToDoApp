@@ -45,26 +45,6 @@ function App() {
     setList(updatedItems);
   };
 
-
-  // const fetchAPI = async () => {
-  //   try {
-  //     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  //     const data = await response.json();
-  //     const apiData = data.map((item) => ({
-  //       id: item.id.toString(),
-  //       title: item.title,
-  //       description: item.body,
-  //     }));
-  //     setList(apiData);
-  //   } catch (error) {
-  //     console.log("Error fetching data from API:", error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchAPI();
-  // }, []);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!taskName) {
