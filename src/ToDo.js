@@ -13,43 +13,41 @@ function ToDo({ items, removeItem, editItem, completeTask, viewHistory }) {
     }
   };
   return (
-    <div className="todo-task">
+    <div className="bg-gray-200 p-4">
       {items.map((item) => {
         const { id, title, description } = item;
         const isChecked = checkedItems.includes(id);
         return (
-
           <article key={id} className={`todo-item ${isChecked ? 'checked' : ''}`}>
-            <p className="title">{title}</p>
-            <p className="description">{description}</p>
-
-            <div className="btn-container">
+            <p className="inline-block mb-0 text-gray-500 transition-colors hover:text-gray-700">{title}</p>
+            <p className="inline-block mb-1 m-0">{description}</p>
+            <div className="flex space-x-2">
               {/* ... */}
               <Button
                 type="button"
-                className="edit-btn"
+                className="text-dark-yellow hover:text-main-yellow bg-transparent border-transparent cursor-pointer text-xs m-0.15 transition"
                 onClick={() => editItem(id)}
-                icon={<EditOutlined className="icons" />}
+                icon={<EditOutlined className="w-full h-full" />}
               />
               <Button
                 type="button"
-                className="complete-btn"
+                className="m-0.1 hover:text-main-grey"
                 onClick={() => handleCompleteTask(id)}
-
-                icon={<CheckOutlined className="icons" />}
+                icon={<CheckOutlined className="w-full h-full" />}
               />
               <Button
                 type="button"
-                className="history-btn"
+                className="m-0.1 hover:text-main-grey"
                 onClick={() => viewHistory(id)}
-                icon={<HistoryOutlined className="icons" />}
+                icon={<HistoryOutlined className="w-full h-full" />}
               />
               <Button
                 type="button"
-                className="delete-btn"
+                className="text-main-red hover:text-dark-red bg-transparent border-transparent cursor-pointer text-xs m-0 mr-0 ml-0 transition"
                 onClick={() => removeItem(id)}
-                icon={<DeleteOutlined className="icons" />}
+                icon={<DeleteOutlined className="w-full h-full" />}
               />
+
             </div>
 
           </article>

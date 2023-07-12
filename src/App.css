@@ -1,3 +1,4 @@
+
 :root {
 
   --main-yellow: #ffc727;
@@ -71,10 +72,7 @@ p {
   color: var(--clr-grey-5);
 }
 
-.img-container {
-  display: flex;
-  justify-content: center;
-}
+
 
 .image {
   width: 400px;
@@ -188,23 +186,12 @@ main {
   color: var(--clr-grey-5);
 }
 
-.title,
-.description {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0;
-}
-
-
 .todo-task {
   padding: 0.25rem;
   padding-left: 1rem;
 }
 
-.icons {
-  width: 2rem;
-  height: 1rem;
-}
+
 
 .submit-btn {
   background: var(--main-yellow);
@@ -227,9 +214,6 @@ main {
   color: var(--clr-white);
 }
 
-.todo-container {
-  margin-top: 2rem;
-}
 
 .todo-item {
   display: flex;
@@ -292,18 +276,6 @@ main {
   color: var(--main-grey);
 }
 
-.edit-btn {
-  color: var(--dark-yellow);
-}
-.edit-btn:hover {
-  color: var(--main-yellow);
-}
-.delete-btn {
-  color: var(--main-red);
-}
-.delete-btn:hover {
-  color: var(--dark-red);
-}
 .todo-item.checked p {
   text-decoration: line-through;
 }

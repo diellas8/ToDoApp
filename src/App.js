@@ -30,21 +30,6 @@ function App() {
   const [isModalVisible, setModalVisible] = useState(false);
 
 
-
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    const draggedId = e.dataTransfer.getData("text/plain");
-    const targetId = "custom-drop-target"; // Provide a unique ID for the drop target
-    const updatedItems = list.map((item) => {
-      if (item.id === draggedId) {
-        return { ...item, id: targetId };
-      }
-      return item;
-    });
-    setList(updatedItems);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!taskName) {
@@ -133,7 +118,8 @@ function App() {
     <>
       <div>
         <section className="section-center">
-          <form className="todo-form" onSubmit={handleSubmit}>
+
+          <form className="flex flex-col items-center" onSubmit={handleSubmit}>
             {alert.show && (
               <Alert {...alert} removeAlert={showAlert} list={list} />
             )}
@@ -152,13 +138,14 @@ function App() {
                 value={taskDescription}
                 onChange={(e) => setTaskDescription(e.target.value)}
               />
+
               <Button type="primary" htmlType="Submit">
                 {isEditing ? "Edit" : "Submit"}
               </Button>
             </div>
           </form>
           {list.length > 0 && (
-            <div className="todo-container">
+            <div className="mt-8">
               <ToDo
                 items={list}
                 removeItem={removeItem}
@@ -172,7 +159,7 @@ function App() {
             </div>
           )}
           {list.length === 0 && (
-            <div className="img-container">
+            <div className="flex justify-center">
               <img src={image} className="image" alt="todoapp" />
             </div>
           )}
@@ -190,7 +177,7 @@ function App() {
             )}
           </Modal>
         </section>
-      </div>
+      </div >
     </>
   );
 }
